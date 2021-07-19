@@ -1,0 +1,34 @@
+<html>
+<head>
+<style>
+html, body, form {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+form { font-size: 60px; }
+</style>
+</head>
+<body>
+<div class="full-height">
+<form style="font-size:60px;" action="http://localhost:5000/post" method="post" enctype="multipart/form-data">
+<p>category</p>
+<input style="font-size:60px;" type="text" name="category" value="storage" />
+<br>
+<p>folder</p>
+<input style="font-size:60px;" type="text" name="folder" value="box" />
+<br>
+<p>tags</p>
+<input style="font-size:60px;" type="text" name="tags" />
+<br>
+<div style="font-size:60px;">
+<input style="font-size:60px;" type="file" name="file" multiple />
+</div>
+<br>
+<input style="font-size:60px;" type="submit" value="Submit">
+<br>
+</form>
+</div>
+</html>

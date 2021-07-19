@@ -1,0 +1,32 @@
+create Dockerfile with contents:
+FROM httpd:2.4
+COPY ./public-html/ /usr/local/apache2/htdocs/
+
+To run using python web server
+echo VERIFY CONNECTED TO STANDARD SSID (not guest)
+cd public-html
+python3 -m http.server 8080 --bind 192.168.1.8
+
+commands to build and run the Docker image:
+
+if [ ! -d public-html ]
+then
+  echo wrong dir
+  read a
+fi
+sudo /etc/init.d/apache2 stop
+docker stop clientapp
+docker rm clientapp
+docker rm clientapp
+docker build -t my-apache2 .
+docker run -dit --name clientapp -p 8080:80 my-apache2
+
+http://localhost:8080/upload.html
+
+to open shell into running container
+docker exec -it clientapp /bin/bash
+
+in ~/python/server
+python3 serverstore.py 
+
+
